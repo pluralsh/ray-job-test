@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ray-jobs
+  namespace: argo-cd
+spec:
+  destination:
+    name: ''
+    namespace: ray
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: jobs
+    repoURL: 'https://github.com/pluralsh/ray-job-test'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
