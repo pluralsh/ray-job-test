@@ -2,7 +2,7 @@ import ray
 import os
 import requests
 ray.init()
-# ray.autoscaler.sdk.request_resources(num_cpus=2)
+ray.autoscaler.sdk.request_resources(num_cpus=3)
 @ray.remote
 class Counter:
     def __init__(self):
