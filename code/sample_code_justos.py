@@ -21,7 +21,7 @@ ray.init(
 )
 
 
-ray.autoscaler.sdk.request_resources(bundles=[{"CPU": 4, "runtime_memory": 16}] * 10)
+ray.autoscaler.sdk.request_resources(bundles=[{"CPU": 4, "runtime_memory": 16}])
 
 # 2. Define a search space.
 search_space = {
