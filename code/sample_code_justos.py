@@ -8,7 +8,7 @@ def objective(config):
 
 
 resource_group = tune.PlacementGroupFactory(
-    [{"CPU": 1, "memory": 1024*1024*1024}],
+    [{"CPU": 4, "memory": 16*1024*1024*1024}],
     strategy="SPREAD",
 )
 trainable_with_resources = tune.with_resources(objective, resource_group)
@@ -21,7 +21,7 @@ ray.init(
 )
 
 
-ray.autoscaler.sdk.request_resources(bundles=[{"CPU": 3, "memory": 15*1024*1024*1024}] * 2)
+#ray.autoscaler.sdk.request_resources(bundles=[{"CPU": 3, "memory": 15*1024*1024*1024}] * 2)
 
 # 2. Define a search space.
 search_space = {
