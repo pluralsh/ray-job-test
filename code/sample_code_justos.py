@@ -8,7 +8,7 @@ def objective(config):
 
 
 resource_group = tune.PlacementGroupFactory(
-    [{"CPU": 1, "memory": 1}],
+    [{"CPU": 1, "memory": 1024*1024*1024}],
     strategy="SPREAD",
 )
 trainable_with_resources = tune.with_resources(objective, resource_group)
