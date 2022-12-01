@@ -11,8 +11,8 @@ resource_group = tune.PlacementGroupFactory(
     [{"CPU": 1, "runtime_memory": 1}],
     strategy="SPREAD",
 )
-#trainable_with_resources = tune.with_resources(objective, resource_group)
-trainable_with_resources = objective
+trainable_with_resources = tune.with_resources(objective, resource_group)
+#trainable_with_resources = objective
 ray.init(
     address="auto",
     _redis_password="5241590000000000",
